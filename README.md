@@ -1,7 +1,5 @@
 # WebGL DevTools for Fast Game Building
 
-![DevTools screenshot](./example.jpg)
-
 This repo is centered on a browser-based DevTools product for building 3D games, interactive showrooms, and playable demos quickly.
 
 The goal is not just to inspect assets. The goal is to go from a blank idea to something like [Peyton's showroom](https://peytontolbert.com/showroom) in a few hours from scratch, using one workspace for world building, asset generation, characters, vehicles, and packaging.
