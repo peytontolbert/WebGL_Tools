@@ -2,7 +2,7 @@
 
 This repo is centered on a browser-based DevTools product for building 3D games, interactive showrooms, and playable demos quickly.
 
-The goal is not just to inspect assets. The goal is to go from a blank idea to something like [Peyton's showroom](https://peytontolbert.com/showroom) in a few hours from scratch, using one workspace for world building, asset generation, characters, vehicles, and packaging.
+The goal is not just to inspect assets. The goal is to go from a blank idea to something like [Peyton's showroom](https://peytontolbert.com/showroom/) in a few hours from scratch, using one workspace for world building, asset generation, characters, vehicles, and packaging.
 
 The older standalone WebGL viewer/runtime is still in the repo, but it now supports the DevTools workflow instead of being the main story.
 
