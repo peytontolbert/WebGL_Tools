@@ -1,0 +1,16 @@
+{
+  "name": "webgl-gta-mmo-server",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node src/index.js",
+    "start": "node src/index.js"
+  },
+  "dependencies": {
+    "@colyseus/core": "^0.15.57",
+    "@colyseus/schema": "^3.0.63",
+    "@colyseus/ws-transport": "^0.15.57",
+    "express": "^4.21.2"
+  }
+}
+

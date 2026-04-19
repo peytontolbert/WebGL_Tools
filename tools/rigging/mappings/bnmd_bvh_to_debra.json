@@ -1,0 +1,30 @@
+{
+  "root": { "source": "Hips", "target": "Hip" },
+  "bones": [
+    { "source": "Spine", "target": "Waist" },
+    { "source": "Chest", "target": "Spine02" },
+    { "source": "Neck", "target": "NeckTwist01" },
+    { "source": "Head", "target": "Head" },
+
+    { "source": "Shoulder_L", "target": "L_Clavicle" },
+    { "source": "UpperArm_L", "target": "L_Upperarm" },
+    { "source": "LowerArm_L", "target": "L_Forearm" },
+    { "source": "Hand_L", "target": "L_Hand" },
+
+    { "source": "Shoulder_R", "target": "R_Clavicle" },
+    { "source": "UpperArm_R", "target": "R_Upperarm" },
+    { "source": "LowerArm_R", "target": "R_Forearm" },
+    { "source": "Hand_R", "target": "R_Hand" },
+
+    { "source": "UpperLeg_L", "target": "L_Thigh" },
+    { "source": "LowerLeg_L", "target": "L_Calf" },
+    { "source": "Foot_L", "target": "L_Foot" },
+    { "source": "Toes_L", "target": "L_ToeBase" },
+
+    { "source": "UpperLeg_R", "target": "R_Thigh" },
+    { "source": "LowerLeg_R", "target": "R_Calf" },
+    { "source": "Foot_R", "target": "R_Foot" },
+    { "source": "Toes_R", "target": "R_ToeBase" }
+  ]
+}
+

@@ -1,0 +1,30 @@
+{
+  "root": { "source": "mixamorig:Hips", "target": "DEF-spine" },
+  "bones": [
+    { "source": "mixamorig:Spine", "target": "DEF-spine" },
+    { "source": "mixamorig:Spine1", "target": "DEF-spine.001" },
+    { "source": "mixamorig:Spine2", "target": "DEF-spine.002" },
+    { "source": "mixamorig:Neck", "target": "DEF-spine.006" },
+    { "source": "mixamorig:Head", "target": "DEF-head" },
+
+    { "source": "mixamorig:LeftShoulder", "target": "DEF-shoulder.L" },
+    { "source": "mixamorig:LeftArm", "target": "DEF-upper_arm.L" },
+    { "source": "mixamorig:LeftForeArm", "target": "DEF-forearm.L" },
+    { "source": "mixamorig:LeftHand", "target": "DEF-hand.L" },
+
+    { "source": "mixamorig:RightShoulder", "target": "DEF-shoulder.R" },
+    { "source": "mixamorig:RightArm", "target": "DEF-upper_arm.R" },
+    { "source": "mixamorig:RightForeArm", "target": "DEF-forearm.R" },
+    { "source": "mixamorig:RightHand", "target": "DEF-hand.R" },
+
+    { "source": "mixamorig:LeftUpLeg", "target": "DEF-thigh.L" },
+    { "source": "mixamorig:LeftLeg", "target": "DEF-shin.L" },
+    { "source": "mixamorig:LeftFoot", "target": "DEF-foot.L" },
+    { "source": "mixamorig:LeftToeBase", "target": "DEF-toe.L" },
+
+    { "source": "mixamorig:RightUpLeg", "target": "DEF-thigh.R" },
+    { "source": "mixamorig:RightLeg", "target": "DEF-shin.R" },
+    { "source": "mixamorig:RightFoot", "target": "DEF-foot.R" },
+    { "source": "mixamorig:RightToeBase", "target": "DEF-toe.R" }
+  ]
+}

@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>WebGL Map Editor</title>
+  <!-- Prevent noisy favicon.ico 404s in dev/preview -->
+  <link rel="icon" href="data:," />
+  <style>
+    html, body { margin: 0; padding: 0; height: 100%; background: #07090d; overflow: hidden; }
+    /* Make native form controls (including <select> dropdowns) use dark colors. */
+    html { color-scheme: dark; }
+    /* Prevent dock panels from overlapping due to padding/border sizing. */
+    *, *::before, *::after { box-sizing: border-box; }
+    #glCanvas { width: 100vw; height: 100vh; display: block; }
+    #uiRoot { position: fixed; inset: 0; z-index: 10; pointer-events: none; font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; color: #eaf0ff; }
+    .panel {
+      pointer-events: auto;
+      position: fixed;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: min(420px, calc(100vw - 36px));
+      max-height: calc(100vh - 36px);
+      overflow: auto;
+      background: rgba(0,0,0,0.62);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 12px;
+      padding: 14px 14px 12px 14px;
+      box-shadow: 0 12px 50px rgba(0,0,0,0.55);
+      backdrop-filter: blur(10px);
+    }
+    .title { font-weight: 800; font-size: 14px; letter-spacing: 0.2px; margin-bottom: 8px; }
+    .muted { opacity: 0.82; font-size: 12px; line-height: 1.25; }
+    .row { display: flex; gap: 10px; align-items: center; }
+    .row > * { flex: 1; }
+    button, input, select, textarea {
+      background: rgba(255,255,255,0.06);
+      color: #eaf0ff;
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 10px;
+      padding: 8px 10px;
+      font-size: 12px;
+      outline: none;
+    }
+    button { cursor: pointer; }
+    button:hover { background: rgba(255,255,255,0.10); }
+    button.primary { background: rgba(120,170,255,0.18); border-color: rgba(120,170,255,0.35); }
+    button.danger { background: rgba(255,90,90,0.12); border-color: rgba(255,90,90,0.25); }
+    /* Fallback styling for dropdown items (browser support varies). */
+    select option, select optgroup { background: #0b0f18; color: #eaf0ff; }
+    .card {
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.04);
+      border-radius: 12px;
+      padding: 10px;
+      margin-top: 10px;
+    }
+    .mapLine { display: flex; gap: 8px; align-items: center; justify-content: space-between; }
+    .mapName { font-weight: 700; font-size: 12px; }
+    .chip { font-size: 11px; padding: 3px 8px; border-radius: 999px; border: 1px solid rgba(255,255,255,0.14); opacity: 0.9; }
+    .rightDock {
+      pointer-events: auto;
+      position: fixed;
+      right: 16px;
+      top: 16px;
+      width: min(380px, calc(100vw - 32px));
+      max-height: calc(100vh - 32px);
+      overflow: auto;
+      background: rgba(0,0,0,0.55);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 12px;
+      padding: 12px;
+      display: none;
+    }
+    .leftDock {
+      pointer-events: auto;
+      position: fixed;
+      left: 16px;
+      top: 16px;
+      width: 180px;
+      max-height: calc(100vh - 32px);
+      overflow: auto;
+      background: rgba(0,0,0,0.55);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 12px;
+      padding: 10px;
+      display: none;
+    }
+    .bottomDock {
+      pointer-events: auto;
+      position: fixed;
+      left: 16px;
+      right: 16px;
+      bottom: 16px;
+      height: 190px;
+      overflow: hidden;
+      background: rgba(0,0,0,0.55);
+      border: 1px solid rgba(255,255,255,0.14);
+      border-radius: 12px;
+      padding: 10px;
+      display: none;
+    }
+    .tabRow {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+    .tabBtn {
+      flex: 0 0 auto;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(255,255,255,0.05);
+    }
+    .tabBtn.active {
+      border-color: rgba(120,170,255,0.45);
+      background: rgba(120,170,255,0.16);
+    }
+    .toolBtn {
+      width: 100%;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 8px 10px;
+      border-radius: 10px;
+      margin-top: 6px;
+      font-size: 12px;
+    }
+    .toolBtn.active {
+      border-color: rgba(120,170,255,0.45);
+      background: rgba(120,170,255,0.16);
+    }
+    .dockTitle {
+      font-weight: 800;
+      font-size: 12px;
+      letter-spacing: 0.2px;
+      margin-bottom: 6px;
+      opacity: 0.95;
+    }
+    .split2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+    }
+    .bottomGrid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 10px;
+      height: 100%;
+    }
+    .scrollArea {
+      overflow: auto;
+      max-height: 140px;
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 10px;
+      padding: 8px;
+      background: rgba(255,255,255,0.03);
+    }
+    .kbd { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size: 11px; opacity: 0.9; }
+
+    /* Small always-visible location label (city / dataset) */
+    .hudCityLabel {
+      position: fixed;
+      top: 14px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 20;
+      /* Keep label centered while allowing long text to scroll (text only; compass stays fixed). */
+      pointer-events: auto;
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.2px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(0,0,0,0.45);
+      border: 1px solid rgba(255,255,255,0.14);
+      color: #eaf0ff;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 10px 35px rgba(0,0,0,0.35);
+      max-width: calc(100vw - 36px);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      overflow: hidden;
+      display: none;
+    }
+    .hudCityText {
+      min-width: 0;
+      white-space: nowrap;
+      overflow-x: auto;
+      overflow-y: hidden;
+      -webkit-overflow-scrolling: touch;
+      flex: 1 1 auto;
+    }
+    /* Hide scrollbars but keep scrollability */
+    .hudCityText::-webkit-scrollbar { height: 0; width: 0; }
+    .hudCityText { scrollbar-width: none; }
+
+    .hudCompass {
+      flex: 0 0 auto;
+      width: 22px;
+      height: 22px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.06);
+      box-shadow: inset 0 0 0 1px rgba(0,0,0,0.18);
+      position: relative;
+    }
+    .hudCompassN {
+      position: absolute;
+      top: -7px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 10px;
+      font-weight: 900;
+      opacity: 0.92;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.55);
+      pointer-events: none;
+    }
+    .hudCompassNeedle {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 2px;
+      height: 8px;
+      transform-origin: 50% 100%;
+      transform: translate(-50%, -100%) rotate(0deg);
+      background: linear-gradient(to bottom, rgba(255,110,110,0.95), rgba(255,255,255,0.85));
+      border-radius: 2px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.35);
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="glCanvas"></canvas>
+  <div id="uiRoot">
+    <div id="cityLabel" class="hudCityLabel"></div>
+  </div>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
+
+

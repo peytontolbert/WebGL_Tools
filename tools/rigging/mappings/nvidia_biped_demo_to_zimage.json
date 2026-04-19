@@ -1,0 +1,33 @@
+{
+  "root": { "source": "Pelvis", "target": "hips" },
+  "bones": [
+    { "source": "Spine1", "target": "DEF-spine" },
+    { "source": "Spine2", "target": "DEF-spine.001" },
+    { "source": "Spine3", "target": "DEF-spine.002" },
+    { "source": "Chest", "target": "chest" },
+    { "source": "Neck1", "target": "neck" },
+    { "source": "Neck2", "target": "neck" },
+    { "source": "Head", "target": "head" },
+
+    { "source": "L_Clavicle", "target": "DEF-shoulder.L" },
+    { "source": "L_UpArm", "target": "DEF-upper_arm.L" },
+    { "source": "L_LoArm", "target": "DEF-forearm.L" },
+    { "source": "L_Wrist", "target": "DEF-hand.L" },
+
+    { "source": "R_Clavicle", "target": "DEF-shoulder.R" },
+    { "source": "R_UpArm", "target": "DEF-upper_arm.R" },
+    { "source": "R_LoArm", "target": "DEF-forearm.R" },
+    { "source": "R_Wrist", "target": "DEF-hand.R" },
+
+    { "source": "L_UpLeg", "target": "DEF-thigh.L" },
+    { "source": "L_LoLeg", "target": "DEF-shin.L" },
+    { "source": "L_Ankle", "target": "DEF-foot.L" },
+    { "source": "L_Ball", "target": "DEF-toe.L" },
+
+    { "source": "R_UpLeg", "target": "DEF-thigh.R" },
+    { "source": "R_LoLeg", "target": "DEF-shin.R" },
+    { "source": "R_Ankle", "target": "DEF-foot.R" },
+    { "source": "R_Ball", "target": "DEF-toe.R" }
+  ]
+}
+

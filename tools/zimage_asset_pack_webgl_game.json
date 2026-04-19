@@ -1,0 +1,177 @@
+{
+  "packId": "webgl_game_core_20",
+  "label": "WebGL Game — Core Asset Pack (20) for Z-Image text→image",
+  "notes": "Designed for fast iteration: mostly seamless tileable textures + a few UI/decal sprites. Outputs are PNGs; use remove-bg tooling if you want cutouts.",
+  "defaults": {
+    "model": "Tongyi-MAI/Z-Image-Turbo",
+    "width": 1024,
+    "height": 1024,
+    "steps": 9,
+    "guidanceScale": 0.0,
+    "seedBase": 1337,
+    "negative": "text, watermark, signature, logo, frame, border, vignette, blurry, low-res, jpeg artifacts"
+  },
+  "assets": [
+    {
+      "id": "tex_asphalt_01",
+      "kind": "texture",
+      "label": "Road asphalt (seamless)",
+      "outName": "tex_asphalt_01",
+      "seedOffset": 1,
+      "prompt": "Seamless tileable asphalt road texture, neutral gray, fine aggregate, subtle wear, no cracks, top-down orthographic, even lighting, albedo only, no shadows, no highlights."
+    },
+    {
+      "id": "tex_concrete_sidewalk_01",
+      "kind": "texture",
+      "label": "Sidewalk concrete slabs (seamless)",
+      "outName": "tex_concrete_sidewalk_01",
+      "seedOffset": 2,
+      "prompt": "Seamless tileable concrete sidewalk texture with expansion joints, light gray, subtle dirt, top-down orthographic, even lighting, albedo only, no shadows."
+    },
+    {
+      "id": "tex_brick_red_01",
+      "kind": "texture",
+      "label": "Red brick wall (seamless)",
+      "outName": "tex_brick_red_01",
+      "seedOffset": 3,
+      "prompt": "Seamless tileable red brick wall texture, classic running bond pattern, slightly varied brick tones, mortar visible, front-on, even lighting, albedo only, no shadows."
+    },
+    {
+      "id": "tex_plaster_painted_01",
+      "kind": "texture",
+      "label": "Painted plaster wall (seamless)",
+      "outName": "tex_plaster_painted_01",
+      "seedOffset": 4,
+      "prompt": "Seamless tileable painted plaster wall texture, off-white with subtle stucco micro-bumps, front-on, even lighting, albedo only, no shadows."
+    },
+    {
+      "id": "tex_metal_corrugated_01",
+      "kind": "texture",
+      "label": "Corrugated metal (seamless)",
+      "outName": "tex_metal_corrugated_01",
+      "seedOffset": 5,
+      "prompt": "Seamless tileable corrugated metal sheet texture, galvanized steel, slight grime, front-on, even lighting, albedo only, no specular highlights, no shadows."
+    },
+    {
+      "id": "tex_roof_shingles_01",
+      "kind": "texture",
+      "label": "Roof shingles (seamless)",
+      "outName": "tex_roof_shingles_01",
+      "seedOffset": 6,
+      "prompt": "Seamless tileable asphalt roof shingles texture, dark gray, consistent rows, front-on, even lighting, albedo only, no shadows."
+    },
+    {
+      "id": "tex_glass_facade_01",
+      "kind": "texture",
+      "label": "Glass facade panels (seamless)",
+      "outName": "tex_glass_facade_01",
+      "seedOffset": 7,
+      "prompt": "Seamless tileable modern glass facade texture, repeating window panels with thin dark mullions, blue-gray tint, minimal reflections, front-on, even lighting."
+    },
+    {
+      "id": "tex_wood_planks_01",
+      "kind": "texture",
+      "label": "Wood planks (seamless)",
+      "outName": "tex_wood_planks_01",
+      "seedOffset": 8,
+      "prompt": "Seamless tileable wood planks texture, medium brown, subtle grain, slight wear, repeating planks, top-down orthographic, even lighting, albedo only, no shadows."
+    },
+    {
+      "id": "tex_grass_01",
+      "kind": "texture",
+      "label": "Grass ground (seamless)",
+      "outName": "tex_grass_01",
+      "seedOffset": 9,
+      "prompt": "Seamless tileable grass ground texture, lush green, small blades, slight variation, top-down orthographic, even lighting, albedo only, no shadows."
+    },
+    {
+      "id": "tex_dirt_path_01",
+      "kind": "texture",
+      "label": "Dirt path (seamless)",
+      "outName": "tex_dirt_path_01",
+      "seedOffset": 10,
+      "prompt": "Seamless tileable dirt path texture, compacted soil, small pebbles, light brown, top-down orthographic, even lighting, albedo only, no shadows."
+    },
+    {
+      "id": "tex_rocky_ground_01",
+      "kind": "texture",
+      "label": "Rocky ground (seamless)",
+      "outName": "tex_rocky_ground_01",
+      "seedOffset": 11,
+      "prompt": "Seamless tileable rocky ground texture, small stones embedded in soil, gray and tan tones, top-down orthographic, even lighting, albedo only, no shadows."
+    },
+    {
+      "id": "tex_sand_01",
+      "kind": "texture",
+      "label": "Sand (seamless)",
+      "outName": "tex_sand_01",
+      "seedOffset": 12,
+      "prompt": "Seamless tileable sand texture, fine grain, pale beige, subtle ripples, top-down orthographic, even lighting, albedo only, no shadows."
+    },
+    {
+      "id": "tex_snow_01",
+      "kind": "texture",
+      "label": "Snow (seamless)",
+      "outName": "tex_snow_01",
+      "seedOffset": 13,
+      "prompt": "Seamless tileable snow texture, clean white with subtle blue-gray variation, fine granular detail, top-down orthographic, even lighting, albedo only, no shadows."
+    },
+    {
+      "id": "ui_icon_compass_01",
+      "kind": "ui_icon",
+      "label": "UI icon: compass",
+      "outName": "ui_icon_compass_01",
+      "seedOffset": 14,
+      "prompt": "Minimal game UI icon of a compass rose, flat vector style, centered, high contrast, monochrome white icon on pure black background, no text."
+    },
+    {
+      "id": "ui_icon_map_pin_01",
+      "kind": "ui_icon",
+      "label": "UI icon: map pin",
+      "outName": "ui_icon_map_pin_01",
+      "seedOffset": 15,
+      "prompt": "Minimal game UI icon of a map pin, flat vector style, centered, high contrast, monochrome white icon on pure black background, no text."
+    },
+    {
+      "id": "ui_icon_inventory_01",
+      "kind": "ui_icon",
+      "label": "UI icon: inventory backpack",
+      "outName": "ui_icon_inventory_01",
+      "seedOffset": 16,
+      "prompt": "Minimal game UI icon of a backpack, flat vector style, centered, high contrast, monochrome white icon on pure black background, no text."
+    },
+    {
+      "id": "ui_icon_warning_01",
+      "kind": "ui_icon",
+      "label": "UI icon: warning triangle",
+      "outName": "ui_icon_warning_01",
+      "seedOffset": 17,
+      "prompt": "Minimal game UI warning triangle icon with exclamation mark, flat vector style, centered, high contrast, monochrome white icon on pure black background, no text."
+    },
+    {
+      "id": "decal_crosswalk_01",
+      "kind": "decal",
+      "label": "Road decal: crosswalk stripes",
+      "outName": "decal_crosswalk_01",
+      "seedOffset": 18,
+      "prompt": "Top-down road marking decal of a crosswalk: clean white parallel stripes, centered, crisp edges, pure black background, no perspective, no shadows, no text."
+    },
+    {
+      "id": "decal_lane_arrows_01",
+      "kind": "decal",
+      "label": "Road decal: lane arrows sheet",
+      "outName": "decal_lane_arrows_01",
+      "seedOffset": 19,
+      "prompt": "Top-down road marking decal sheet: three clean white lane arrows (straight, left, right) arranged neatly, crisp edges, pure black background, no perspective, no shadows, no text."
+    },
+    {
+      "id": "sprite_tree_01",
+      "kind": "sprite_ref",
+      "label": "Sprite ref: tree (white bg for cutout)",
+      "outName": "sprite_tree_01",
+      "seedOffset": 20,
+      "prompt": "Stylized game-ready tree, full object, centered, simple trunk and leafy canopy, clean silhouette, studio lighting, pure white background, no ground shadow, no text."
+    }
+  ]
+}
+

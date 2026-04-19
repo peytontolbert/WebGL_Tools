@@ -1,0 +1,30 @@
+{
+  "root": { "source": "mixamorig:Hips", "target": "mixamorig:Hips" },
+  "bones": [
+    { "source": "mixamorig:Spine", "target": "mixamorig:Spine" },
+    { "source": "mixamorig:Spine1", "target": "mixamorig:Spine1" },
+    { "source": "mixamorig:Spine2", "target": "mixamorig:Spine2" },
+    { "source": "mixamorig:Neck", "target": "mixamorig:Neck" },
+    { "source": "mixamorig:Head", "target": "mixamorig:Head" },
+
+    { "source": "mixamorig:LeftShoulder", "target": "mixamorig:LeftShoulder" },
+    { "source": "mixamorig:LeftArm", "target": "mixamorig:LeftArm" },
+    { "source": "mixamorig:LeftForeArm", "target": "mixamorig:LeftForeArm" },
+    { "source": "mixamorig:LeftHand", "target": "mixamorig:LeftHand" },
+
+    { "source": "mixamorig:RightShoulder", "target": "mixamorig:RightShoulder" },
+    { "source": "mixamorig:RightArm", "target": "mixamorig:RightArm" },
+    { "source": "mixamorig:RightForeArm", "target": "mixamorig:RightForeArm" },
+    { "source": "mixamorig:RightHand", "target": "mixamorig:RightHand" },
+
+    { "source": "mixamorig:LeftUpLeg", "target": "mixamorig:LeftUpLeg" },
+    { "source": "mixamorig:LeftLeg", "target": "mixamorig:LeftLeg" },
+    { "source": "mixamorig:LeftFoot", "target": "mixamorig:LeftFoot" },
+    { "source": "mixamorig:LeftToeBase", "target": "mixamorig:LeftToeBase" },
+
+    { "source": "mixamorig:RightUpLeg", "target": "mixamorig:RightUpLeg" },
+    { "source": "mixamorig:RightLeg", "target": "mixamorig:RightLeg" },
+    { "source": "mixamorig:RightFoot", "target": "mixamorig:RightFoot" },
+    { "source": "mixamorig:RightToeBase", "target": "mixamorig:RightToeBase" }
+  ]
+}

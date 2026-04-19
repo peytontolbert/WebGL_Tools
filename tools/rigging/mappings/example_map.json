@@ -1,0 +1,30 @@
+{
+  "root": { "source": "Hips", "target": "hips" },
+  "bones": [
+    { "source": "Spine", "target": "spine" },
+    { "source": "Spine1", "target": "chest" },
+    { "source": "Neck", "target": "neck" },
+    { "source": "Head", "target": "head" },
+
+    { "source": "LeftShoulder", "target": "shoulder.L" },
+    { "source": "LeftArm", "target": "upper_arm.L" },
+    { "source": "LeftForeArm", "target": "forearm.L" },
+    { "source": "LeftHand", "target": "hand.L" },
+
+    { "source": "RightShoulder", "target": "shoulder.R" },
+    { "source": "RightArm", "target": "upper_arm.R" },
+    { "source": "RightForeArm", "target": "forearm.R" },
+    { "source": "RightHand", "target": "hand.R" },
+
+    { "source": "LeftUpLeg", "target": "thigh.L" },
+    { "source": "LeftLeg", "target": "shin.L" },
+    { "source": "LeftFoot", "target": "foot.L" },
+    { "source": "LeftToeBase", "target": "toe.L" },
+
+    { "source": "RightUpLeg", "target": "thigh.R" },
+    { "source": "RightLeg", "target": "shin.R" },
+    { "source": "RightFoot", "target": "foot.R" },
+    { "source": "RightToeBase", "target": "toe.R" }
+  ]
+}
+

@@ -1,0 +1,10 @@
+Source-vs-sim geometry mismatch (latched).
+expected: wb=2.649 tf=1.534 tr=1.544 src=ac_track_target
+measured: wb=1.948 tf=2.546 tr=1.381
+delta: dWb=0.701 dTf=1.012 dTr=0.163 (limits wb>0.12 track>0.12)
+spindle xz: FL=(-1.074, 1.521) FR=(1.466, 1.356) RL=(0.377, 3.478) RR=(1.648, 2.938)
+hardpoints: front(applied=yes geomOk=yes partial=yes) rear(applied=yes geomOk=yes partial=yes)
+pre-spawn geom: wb=2.649 tf=1.534 tr=1.544 src=ac_track_target hold=no
+sim: wheelbase=1.948 trackF=2.546 trackR=1.381
+raw spindle: api=bad finite=no plausible=no canon=bad filtered=no badFrames=973/45
+bridge spindle: reason=fail_no_cache allWheels=no sane=no failWheel=FL failStage=fallback_invalid directMask=0 fallbackMask=0 wb=0.000 tf=0.000 tr=0.000

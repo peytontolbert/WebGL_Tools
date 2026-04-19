@@ -1,0 +1,7 @@
+Raw spindle stream is unhealthy (continuous invalid frames).
+latest raw: wheelbase=— trackF=— trackR=—
+raw bad frames: 95
+bridge: reason=fail_no_cache allWheels=no sane=no failWheel=FL failStage=fallback_invalid directMask=0 fallbackMask=0 wb=0.000 tf=0.000 tr=0.000
+This points to spindle readback/API-stream validity (missing/non-finite), not visual skin anchoring.
+
+geom trace: (empty)

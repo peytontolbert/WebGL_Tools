@@ -1,0 +1,42 @@
+PARALLEL_AGENT_TASKS.md
+OPEN_DATA_SOURCES_NO_API_KEY.md
+EARTH_STREETLEVEL_WRAPPER_DESIGN.md
+.env
+SHADER_PARITY_WITH_CODEWALKER.md
+TEXTURE_NAMING_AND_DISCREPANCIES.md
+VIEWER_COVERAGE.md
+# Asset payloads (datasets, textures, large binaries) are usually local-only.
+# We do keep a small manifest template in git so the app has a schema reference.
+assets/**
+!assets/buildings/
+!assets/buildings/*.json
+!assets/datasets/
+assets/datasets/**
+!assets/datasets/manifest.json
+!assets/datasets/manifest.example.json
+data/
+dist/
+tools/out/
+tools/third_party/
+GTA_LIKE_LOADING_AND_RENDERING.md
+node_modules/
+public/chrono/**
+!public/chrono/README.md
+
+# Downloaded external models/textures (keep them local; fetch via scripts).
+public/external/**
+!public/external/README.md
+repos/
+assets/
+Autos/
+*.glb
+webautos/
+__pycache__/
+outputs/
+assetto/
+.cursor/
+__pycache__/
+.pytest_cache/
+docs/
+exports/
+generated/

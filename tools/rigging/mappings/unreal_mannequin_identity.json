@@ -1,0 +1,32 @@
+{
+  "root": { "source": "pelvis", "target": "pelvis" },
+  "bones": [
+    { "source": "root", "target": "root" },
+    { "source": "spine_01", "target": "spine_01" },
+    { "source": "spine_02", "target": "spine_02" },
+    { "source": "spine_03", "target": "spine_03" },
+    { "source": "neck_01", "target": "neck_01" },
+    { "source": "Head", "target": "Head" },
+
+    { "source": "clavicle_l", "target": "clavicle_l" },
+    { "source": "upperarm_l", "target": "upperarm_l" },
+    { "source": "lowerarm_l", "target": "lowerarm_l" },
+    { "source": "hand_l", "target": "hand_l" },
+
+    { "source": "clavicle_r", "target": "clavicle_r" },
+    { "source": "upperarm_r", "target": "upperarm_r" },
+    { "source": "lowerarm_r", "target": "lowerarm_r" },
+    { "source": "hand_r", "target": "hand_r" },
+
+    { "source": "thigh_l", "target": "thigh_l" },
+    { "source": "calf_l", "target": "calf_l" },
+    { "source": "foot_l", "target": "foot_l" },
+    { "source": "ball_l", "target": "ball_l" },
+
+    { "source": "thigh_r", "target": "thigh_r" },
+    { "source": "calf_r", "target": "calf_r" },
+    { "source": "foot_r", "target": "foot_r" },
+    { "source": "ball_r", "target": "ball_r" }
+  ]
+}
+
